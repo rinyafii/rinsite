@@ -1,0 +1,32 @@
+---
+import HeaderButton from './buttons/HeaderButton.astro';
+---
+<style>
+    nav {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        height: 100%;
+    }
+    a {
+        text
+        margin: 0.2em;
+    }
+    .logo {
+        margin: 0.4rem 1rem;
+    }
+    header {
+        padding-bottom: 0;
+        background-color: #71578e50;
+        backdrop-filter: blur(10px);
+    }
+</style>
+
+<header>
+    <nav>
+        <img class="logo" src="/melogo.svg" height=45px />
+        <HeaderButton location="/" text="home" />
+        <HeaderButton location="/links/" text="my links" />
+        <HeaderButton location="/blog/" text="blog" />
+    </nav>
+</header>

@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = "bloggers";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<h2>🦐 listen to me ramble</h2>
+	<p>it will not be interesting unless you are strange like me</p>
+
+	<ul>
+		{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+	</ul>
+</BaseLayout>

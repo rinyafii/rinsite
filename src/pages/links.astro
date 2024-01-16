@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Social from '../components/buttons/Social.astro';
+const pageTitle = "my links";
+---
+
+<style>
+    ul {
+        list-style-type: none; /* Remove bullets */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margins */
+    }
+    .headerthingy {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+    
+    <h2 class="headerthingy">how 2 find me</h2>
+
+    <ul>
+        <Social platform='twitter', username='rinuwaii'/>
+        <Social platform='youtube', username='@rinuwaii'/>
+    </ul>
+</BaseLayout>
