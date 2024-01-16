@@ -35,6 +35,20 @@ const { location, text } = Astro.props;
         transition: 0.1s;
         background: linear-gradient(180deg, #e0bb65 0%, var(--page-bg) 100%);
     }
+    .currentPage::after {
+        content: "";
+        background: #cbabee;
+        border-radius: 50px;
+        width: 2rem;
+        height: 0.3rem;
+        position: absolute;
+        bottom: -0.2rem;
+    }
+    .currentPage:hover::after {
+        width: 3rem;
+        transition: all .4s;
+    }
+
 </style>
 
-<a href={location}>{text}</a>
+<a class="headerButton" href={location}>{text}</a>

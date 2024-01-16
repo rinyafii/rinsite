@@ -22,11 +22,20 @@ import HeaderButton from './buttons/HeaderButton.astro';
     }
 </style>
 
+<script>
+    const curPage = window.location.pathname
+    const selector = 'a[href="'+curPage+'"].headerButton'
+    document.querySelectorAll(selector).forEach(function(ele, idx) {
+        ele.classList.add('currentPage');
+    });
+</script>
+
 <header>
     <nav>
         <img class="logo" src="/melogo.svg" height=45px />
-        <HeaderButton location="/" text="home" />
-        <HeaderButton location="/links/" text="my links" />
-        <HeaderButton location="/thoughts/" text="thoughts" />
+        <HeaderButton location="/" text="home" class="homeBtn" />
+        <HeaderButton location="/links/" text="my links" class="linksBtn" />
+        <HeaderButton location="/thoughts/" text="thoughts" class="thoughtsBtn" />
+        <HeaderButton location="/gallery/" text="gallery" class="galleryBtn" />
     </nav>
 </header>

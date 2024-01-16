@@ -1,19 +1,25 @@
 <style>
-    div, p {
-        display: flex;
-        justify-content: center;
-    }
     p {
         margin: 0;
         font-weight: bold;
+        width: 100%;
     }
     footer {
         padding: 0.5rem;
         background-color: #71578e50;
         backdrop-filter: blur(10px);
     }
+    .frame {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
 </style>
 
 <footer>
-    <p>made with the power of :3</p>
+    <div class="frame">
+        <p style="text-align: start">made with astro</p>
+        <p style="text-align: center">powered by the power of :3</p>
+        <p style="text-align: end">part of the orbithub network</p>
+    </div>
 </footer>
