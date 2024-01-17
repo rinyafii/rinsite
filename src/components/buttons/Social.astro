@@ -1,31 +1,77 @@
 ---
-const { platform, username } = Astro.props;
+const { name, icon, username, link, buttonColor, buttonHover } = Astro.props;
 ---
-<style>
+<style define:vars={{ buttonColor, buttonHover }}>
     a {
-        margin: 1rem 0;
+        text-decoration: none;
+
+        display: inline-block;
+
         width: 100%;
-        height: 3rem;
-        border-radius: 0.5rem;
+        height: 4rem;
+    }
+	div {
+		position: relative;
+		overflow: hidden;
 
         display: flex;
+		flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        font-size: 1.5rem;
-        font-weight: bold;
+        width: 100%;
+        height: 100%;
+
+		border-radius: 0.75rem;
+		background: var(--buttonColor);
+
+		transition: all 0.1s ease-in-out;
+	}
+	p {
+		margin: 0;
         color: #f5f5f5;
-        background: #cbabee;
-        text-decoration: none;
+	}
+	.icon {
+		position: absolute;
+		left: -0.75rem;
+		top: 15%;
+
+		object-fit:contain;
+		object-position: top left;
+
+		mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.80) 0%, transparent 90%);
+
+		width: 10rem;
+		height: 70%;
+
+	}
+	.platname {
+		font-family: 'Comfortaa';
+		font-weight: bold;
+        font-size: 1.5rem;
+	}
+	.username {
+		font-family: 'Bahnschrift';
+		font-weight: 600;
+        font-size: 1rem;
+	}
+    a:hover > div {
+		width: calc(100% + 0.3rem);
+		height: calc(100% + 0.3rem);
+		margin: -0.15rem;
+        background-color: var(--buttonHover);
     }
-    a:hover {
-        transition: 0.2s;
-        background-color: #856c9f;
-    }
-    a:active {
-        transition: 0.1s;
-        background-color: #e0bb65;
+    a:active > div {
+		width: calc(100% - 0.5rem);
+		height: calc(100% - 0.5rem);
+		margin: 0.25rem;
     }
 </style>
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a href={link}>
+	<div>
+		<p class="platname">{name}</p>
+		<p class="username">{username}</p>
+		<img class="icon" src={icon} />
+	</div>
+</a>

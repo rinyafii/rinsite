@@ -1,11 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Social from '../components/buttons/Social.astro';
+import socialLinks from '../resources/socialLinks.json';
+
 const pageTitle = "my links";
 ---
 
 <style>
+
+	.discordLink {
+		margin-bottom: 0.5rem;
+	}
+
     ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 0.5rem;
+		row-gap: 0.5rem;
+
         list-style-type: none; /* Remove bullets */
         padding: 0; /* Remove padding */
         margin: 0; /* Remove margins */
@@ -21,8 +33,12 @@ const pageTitle = "my links";
     
     <h2 class="headerthingy">how 2 find me</h2>
 
-    <ul>
-        <Social platform='twitter', username='rinuwaii'/>
-        <Social platform='youtube', username='@rinuwaii'/>
+	<div class="discordLink">
+		<Social name={socialLinks.discord.platname} icon={socialLinks.discord.icon} username={socialLinks.discord.username} link={socialLinks.discord.link} buttonColor={socialLinks.discord.buttonColor} buttonHover={socialLinks.discord.hoverColor} />
+	</div>
+    <ul class="mainLinks">
+		{socialLinks.platforms.map((link) => (
+			<Social name={link.platname} icon={link.icon} username={link.username} link={link.link} buttonColor={link.buttonColor} buttonHover={link.hoverColor} />
+		))}
     </ul>
 </BaseLayout>

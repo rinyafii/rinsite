@@ -6,8 +6,28 @@ const pageTitle = "home";
 <!-- <script type="module" src="https://unpkg.com/@fluentui/web-components">
 </script> -->
 
+<style>
+	h3 {
+		margin: 0;
+		color: #202020;
+	}
+
+	.warning {
+		border-radius: 0.5rem;
+		background-color: #f1ad8a;
+		padding: 0.5rem;
+		margin-top: 2rem;
+
+		display: flex;
+		justify-content: center;
+	}
+</style>
+
 <BaseLayout pageTitle={pageTitle}>
-	<h2>hey all, rin here</h2>
-    <h3>minorly stupid and majorly silly</h3>
-	<p>im doing trolling here soon</p>
+	<div class="warning">
+		<h3>this site is still a massive WIP, so yeah. you can mess around but there isnt a lot to look at yet</h3>
+	</div>
+
+	<h1>welcome to the rinzone</h1>
+	<p>the future home for... something</p>
 </BaseLayout>

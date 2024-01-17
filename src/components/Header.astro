@@ -2,12 +2,6 @@
 import HeaderButton from './buttons/HeaderButton.astro';
 ---
 <style>
-    nav {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-        height: 100%;
-    }
     a {
         text
         margin: 0.2em;
@@ -19,7 +13,40 @@ import HeaderButton from './buttons/HeaderButton.astro';
         padding-bottom: 0;
         background-color: #71578e50;
         backdrop-filter: blur(10px);
+
+        display: flex;
+        justify-content: center;
     }
+    nav {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        height: 100%;
+        width: 100%;
+        max-width: 120ch;
+    }
+
+	.wipTab {
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+
+        width: 5rem;
+        height: 2.5rem;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+
+        display: flex;
+        justify-content:center;
+        align-items: center;
+
+        font-weight: bold;
+        color: #202020;
+        background: #f1ad8a;
+        text-decoration: none;
+    }
+
 </style>
 
 <script>
@@ -33,6 +60,7 @@ import HeaderButton from './buttons/HeaderButton.astro';
 <header>
     <nav>
         <img class="logo" src="/melogo.svg" height=45px />
+		<div class="wipTab"><h2>WIP</h2></div>
         <HeaderButton location="/" text="home" class="homeBtn" />
         <HeaderButton location="/links/" text="my links" class="linksBtn" />
         <HeaderButton location="/thoughts/" text="thoughts" class="thoughtsBtn" />

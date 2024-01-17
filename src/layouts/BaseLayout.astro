@@ -16,28 +16,25 @@ const { pageTitle } = Astro.props;
 	</head>
 
 	<style>
-		html, body {
-			height: 100%;
+		html {margin: 0}
+		body {
+			min-height: 100vh;
 			margin: 0;
 			display: flex;
-  			flex-flow: column;
+  			flex-direction: column;
 		}
-		.header {
-			position: sticky;
-			top: 0;
+		.header, .footer {
+			width: 100%;
 		}
 		.main {
+			flex: 1;
+
 			height: 100%;
 			width: 100%;
 			margin: 0 auto;
-			max-width: 80ch;
+			max-width: 100ch;
 			padding-left: 1rem;
 			padding-right: 1rem;
-		}
-		.footer {
-			position: sticky;
-			bottom: 0;
-			margin-block-start: auto;
 		}
 	</style>
 	
