@@ -1,30 +1,87 @@
+---
+import StandardButton from "../components/buttons/ButtonStd.astro";
+---
+
 <style>
-    p {
-        margin: 0;
-        font-weight: bold;
-        width: 100%;
-    }
     footer {
         padding: 0.5rem;
         background-color: #71578e50;
         backdrop-filter: blur(10px);
-		
-        display: flex;
-        justify-content: center;
     }
-    .frame {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+	.txtBox{
+		margin: 0;
+	}
+
+	.footerText, .friendText {
+        font-weight: bold;
+	}
+
+    .friendFrame {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		margin-bottom: 1rem;
+
 		width: 100%;
         max-width: 120ch;
     }
+	.friendItem {
+		margin: 0 0.2rem;
+	}
+	.friendButton{
+		display: flex;
+		width: 8rem;
+		height: 2rem;
+	}
+	.nateBtn{
+		color: white;
+		font-weight: bold;
+	}
+	.cresBtn{
+		color: rgb(0, 0, 0);
+		font-weight: bold;
+	}
+	
+
+    .endFrame {
+        display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		width: 100%;
+        max-width: 120ch;
+    }
+	.textLeft {justify-content: start}
+	.textCenter {justify-content: center}
+	.textRight {justify-content: end}
+	.endTextFrame{
+		display: flex;
+		width: 100%;
+	}
 </style>
 
 <footer>
-    <div class="frame">
-        <p style="text-align: start">made with astro</p>
-        <p style="text-align: center">powered by the power of :3</p>
-        <p style="text-align: end">part of the orbithub network</p>
+    <div class="friendFrame">
+		<p class="friendItem friendText txtBox">some cool people:</p>
+		<div class="friendItem friendButton"> <StandardButton link="https://roads.aznate.tech/" buttonColor="#e09f11" buttonHover="#ad7a0d">
+			<p class="nateBtn txtBox">AzNate Roads</p>
+		</StandardButton> </div>
+		<div class="friendItem friendButton"> <StandardButton link="https://tech.aznate.tech/" buttonColor="#e09f11" buttonHover="#ad7a0d">
+			<p class="nateBtn txtBox">AzNate Tech</p>
+		</StandardButton> </div>
+		<div class="friendItem friendButton"> <StandardButton link="https://shedingtonian.neocities.org/" buttonColor="#eb343d" buttonHover="#b7282f">
+			<p class="cresBtn txtBox">Shedingtonian</p>
+		</StandardButton> </div>
+	</div>
+
+	<div class="endFrame">
+		<div class="endTextFrame textLeft">
+			<p class="footerText txtBox" >made with <a href="https://astro.build/">astro</a></p>
+		</div>
+        <div class="endTextFrame textCenter">
+			<p class="footerText txtBox" >powered by the power of :3</p>
+		</div>
+		<div class="endTextFrame textRight">
+			<p class="footerText txtBox" >part of the <a href="https://orbithub.xyz/">orbithub network</a></p>
+		</div>
     </div>
 </footer>
