@@ -32,4 +32,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: site-build
-        path: /home/runner/work/astro_test/astro_test/dist/
+        path: /home/runner/work/rinsite/rinsite/dist/
