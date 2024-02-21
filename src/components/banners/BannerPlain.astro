@@ -1,0 +1,43 @@
+---
+const { headTxt, headTxtColor, headBgColor, bodyTxt, bodyTxtColor, bodyBgColor } = Astro.props;
+---
+<style define:vars={{ headTxtColor, headBgColor, bodyTxtColor, bodyBgColor }} >
+	.bannerFrame {
+		width: 100%
+	}
+
+	.bannerHeader{
+		border-top-left-radius: var(--corner-base);
+		border-top-right-radius: var(--corner-base);
+		background-color: var(--headBgColor);
+		color: var(--headTxtColor);
+		
+		display: flex;
+		align-items: center;
+		padding: 0.5rem 1.5rem 0.2rem 1.5rem;
+	}
+	.bannerHeader > h3 { margin: 0 }
+
+	.bannerContent{
+		border-bottom-left-radius: var(--corner-base);
+		border-bottom-right-radius: var(--corner-base);
+		background-color: var(--bodyBgColor);
+		color: var(--bodyTxtColor);
+		padding: 0.2rem 1.5rem 1rem 1.5rem;
+
+		word-wrap: break-word;
+	}
+	.bannerContent > p {
+		width: 100%;
+		margin: 0;
+	}
+</style>
+
+<div class="bannerFrame">
+	<div class="bannerHeader">
+		<h3>{headTxt}</h3>
+	</div>
+	<div class="bannerContent">
+		<p>{bodyTxt}</p>
+	<div/>
+</div>

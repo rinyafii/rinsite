@@ -1,7 +1,7 @@
 {
 	"discord":{
 		"platname":"orbit hangout",
-		"icon":"/pageReqs/links/discord.svg",
+		"icon":"/img/links/discord.svg",
 		"username":"me & my friends internet oasis",
 		"link":"https://discord.gg/qfcheraFa4",
 		"buttonColor":"#7289da",
@@ -10,7 +10,7 @@
 	"platforms":[
 	   {
 		"platname":"twitter",
-		"icon":"/pageReqs/links/twitter.svg",
+		"icon":"/img/links/twitter.svg",
 		"username":"@rinuwaii",
 		"link":"https://twitter.com/rinuwaii",
 		"buttonColor":"#1A91DA",
@@ -18,7 +18,7 @@
 	   },
 	   {
 		"platname":"bluesky",
-		"icon":"/pageReqs/links/bluesky.svg",
+		"icon":"/img/links/bluesky.svg",
 		"username":"@rin.orbithub.xyz",
 		"link":"https://bsky.app/profile/rin.orbithub.xyz",
 		"buttonColor":"#006acc",
@@ -26,7 +26,7 @@
 	   },
 	   {
 		"platname":"main spotify playlist",
-		"icon":"/pageReqs/links/spotify.svg",
+		"icon":"/img/links/spotify.svg",
 		"username":"",
 		"link":"https://open.spotify.com/playlist/2ThKG2YcUXUykX4AzAe40h",
 		"buttonColor":"#1ED360",
@@ -34,7 +34,7 @@
 	   },
 	   {
 		"platname":"youtube",
-		"icon":"/pageReqs/links/youtube.svg",
+		"icon":"/img/links/youtube.svg",
 		"username":"@rinuwaii",
 		"link":"https://youtube.com/@rinuwaii",
 		"buttonColor":"#ff0000",
@@ -42,7 +42,7 @@
 	   },
 	   {
 		"platname":"yt - music posting",
-		"icon":"/pageReqs/links/youtube.svg",
+		"icon":"/img/links/youtube.svg",
 		"username":"@fitemusic",
 		"link":"https://youtube.com/@fitemusic",
 		"buttonColor":"#ff0000",
@@ -50,7 +50,7 @@
 	   },
 	   {
 		"platname":"yt - stream archives",
-		"icon":"/pageReqs/links/youtube.svg",
+		"icon":"/img/links/youtube.svg",
 		"username":"@fitestreams",
 		"link":"https://youtube.com/@fitestreams",
 		"buttonColor":"#ff0000",
@@ -58,7 +58,7 @@
 	   },
 	   {
 		"platname":"twitch",
-		"icon":"/pageReqs/links/twitch.svg",
+		"icon":"/img/links/twitch.svg",
 		"username":"fiteuwu",
 		"link":"https:/twitch.tv/fiteuwu",
 		"buttonColor":"#9147FF",
@@ -66,7 +66,7 @@
 	   },
 	   {
 		"platname":"steam",
-		"icon":"/pageReqs/links/steam.svg",
+		"icon":"/img/links/steam.svg",
 		"username":"rinuwaii",
 		"link":"https://steamcommunity.com/id/rinuwaii/",
 		"buttonColor":"#72b2e4",
@@ -74,7 +74,7 @@
 	   },
 	   {
 		"platname":"github",
-		"icon":"/pageReqs/links/github.svg",
+		"icon":"/img/links/github.svg",
 		"username":"rinuwaii",
 		"link":"https://github.com/rinuwaii",
 		"buttonColor":"#000000",

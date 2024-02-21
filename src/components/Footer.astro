@@ -1,87 +1,97 @@
 ---
-import StandardButton from "../components/buttons/ButtonStd.astro";
+import BaseButton from "./buttons/ButtonStd.astro";
 ---
-
 <style>
-    footer {
-        padding: 0.5rem;
-        background-color: #71578e50;
-        backdrop-filter: blur(10px);
-    }
-	.txtBox{
-		margin: 0;
-	}
-
-	.footerText, .friendText {
+    .textFrame p, .friendFrame p {
+        margin: 0;
         font-weight: bold;
-	}
-
-    .friendFrame {
+    }
+    .friendFrame p {
+        margin: 0 1rem;
+    }
+    .friendFrame h2 {
+        margin: 0;
+        font-weight: bold;
+		align-self: center;
+		margin-bottom: 0.3rem;
+    }
+    footer {
+        padding: 1rem 0;
+        background-color: var(--col-bg-head-foot);
+        backdrop-filter: blur(10px);
+		
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+	.friendButton {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
+		height: 2.5rem;
+		padding: 0 0.3rem;
+	}
+	.nate1 {
+		padding-right: 0.1rem;
+	}
+	.nate2 {
+		padding-left: 0.1rem;
+	}
+    .textFrame {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+		width: 100%;
+        max-width: 120ch;
+    }
+    .friendFrame {
+        display: flex;
+        flex-direction: column;
+		align-items: center;
+		width: 100%;
+        max-width: 120ch;
 		margin-bottom: 1rem;
-
-		width: 100%;
-        max-width: 120ch;
     }
-	.friendItem {
-		margin: 0 0.2rem;
-	}
-	.friendButton{
-		display: flex;
-		width: 8rem;
-		height: 2rem;
-	}
-	.nateBtn{
-		color: white;
-		font-weight: bold;
-	}
-	.cresBtn{
-		color: rgb(0, 0, 0);
-		font-weight: bold;
-	}
-	
-
-    .endFrame {
-        display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+    .friendButtons {
+        display: flex;
+        flex-direction: row;
+		align-content: center;
+        justify-content: center;
 		width: 100%;
-        max-width: 120ch;
     }
-	.textLeft {justify-content: start}
-	.textCenter {justify-content: center}
-	.textRight {justify-content: end}
-	.endTextFrame{
-		display: flex;
-		width: 100%;
+	.darkText {
+		color: var(--col-txt-D)
+	}
+	.lightText {
+		color: var(--col-txt-L)
 	}
 </style>
 
 <footer>
     <div class="friendFrame">
-		<p class="friendItem friendText txtBox">some cool people:</p>
-		<div class="friendItem friendButton"> <StandardButton link="https://roads.aznate.tech/" buttonColor="#e09f11" buttonHover="#ad7a0d">
-			<p class="nateBtn txtBox">AzNate Roads</p>
-		</StandardButton> </div>
-		<div class="friendItem friendButton"> <StandardButton link="https://tech.aznate.tech/" buttonColor="#e09f11" buttonHover="#ad7a0d">
-			<p class="nateBtn txtBox">AzNate Tech</p>
-		</StandardButton> </div>
-		<div class="friendItem friendButton"> <StandardButton link="https://shedingtonian.neocities.org/" buttonColor="#eb343d" buttonHover="#b7282f">
-			<p class="cresBtn txtBox">Shedingtonian</p>
-		</StandardButton> </div>
-	</div>
-
-	<div class="endFrame">
-		<div class="endTextFrame textLeft">
-			<p class="footerText txtBox" >made with <a href="https://astro.build/">astro</a></p>
+		<h2 style="text-align: center">Some cool people: </h2>
+		<div class='friendButtons'>
+			<div class="friendButton nate1">
+				<BaseButton link='https://www.aznate.tech/' buttonColor=#ffbf00 buttonHover=#b28500 borderRad="var(--corner-base) 0 0 var(--corner-base)">
+					<p class='darkText' style="text-align: center">AzNate Tech</p>
+				</BaseButton>
+			</div>
+			<div class="friendButton nate2">
+				<BaseButton link='https://roads.aznate.tech/' buttonColor=#ffbf00 buttonHover=#b28500 borderRad="0 var(--corner-base) var(--corner-base) 0">
+					<p class='darkText' style="text-align: center">Roads</p>
+				</BaseButton>
+			</div>
+			<div class="friendButton">
+				<BaseButton link='https://shedingtonian.neocities.org/' buttonColor=#eb343d buttonHover=#9e2329 borderRad="var(--corner-base)">
+					<p class='lightText' style="text-align: center">Crescent</p>
+				</BaseButton>
+			</div>
 		</div>
-        <div class="endTextFrame textCenter">
-			<p class="footerText txtBox" >powered by the power of :3</p>
-		</div>
-		<div class="endTextFrame textRight">
-			<p class="footerText txtBox" >part of the <a href="https://orbithub.xyz/">orbithub network</a></p>
-		</div>
+    </div>
+    <div class="textFrame">
+        <p style="text-align: start">made with astro</p>
+        <p style="text-align: center">powered by the power of :3</p>
+        <p style="text-align: end">part of the orbithub network</p>
     </div>
 </footer>

@@ -1,15 +1,94 @@
-html {
-    color: #f5f5f5;
-    background-color: #3e3642;
-    font-family: 'Noto Sans', sans-serif;
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('/font/Comfortaa-Variable.ttf') format('truetype-variations');
+    font-weight: 300 700;
+    font-style: normal;
 }
 
-a {
-    color: #8692ff;
+@media (prefers-color-scheme: dark) {
+	:root{
+		--col-txt-main: var(--col-txt-L);
+		--col-txt-invert: var(--col-txt-D);
+		--col-warning: var(--internal-D-col-warning);
+		--internal-starter-h: var(--internal-D-starter-h);
+		--internal-starter-s: var(--internal-D-starter-s);
+		--internal-starter-v: var(--internal-D-starter-v);
+	}
 }
-a:visited {
-    color: #cc9aff;
+
+@media (prefers-color-scheme: light) {
+	:root{
+		--col-txt-main: var(--col-txt-D);
+		--col-txt-invert: var(--col-txt-L);
+		--col-warning: var(--internal-L-col-warning);
+		--internal-starter-h: var(--internal-L-starter-h);
+		--internal-starter-s: var(--internal-L-starter-s);
+		--internal-starter-v: var(--internal-L-starter-v);
+	}
 }
+
+:root {
+
+	/* ---------------- */
+	/* VARIABLE COLORS */
+	--col-txt-L: #f5f5f5;
+	--col-txt-D: #202020;
+
+	--internal-L-col-warning: hsl(20, 91%, 63%);
+	--internal-D-col-warning: hsl(20, 79%, 74%);
+
+	--internal-L-starter-h: 258;
+	--internal-L-starter-s: 15%;
+	--internal-L-starter-v: 90%;
+
+	--internal-D-starter-h: 269;
+	--internal-D-starter-s: 37%;
+	--internal-D-starter-v: 20%;
+	
+	/* ---- STATIC */
+	/* text */
+	--col-txt-link: #d3c1ff;
+	--col-txt-link-clicked: #a785fd;
+
+	/* accent */
+	--internal-col-accent: 269deg, 66%, 80%;
+	--col-accent: hsl(var(--internal-col-accent));
+	--col-accent-half-transparent: hsl(var(--internal-col-accent), 0.5);
+	--col-accent-full-transparent: hsl(var(--internal-col-accent), 0);
+	--col-txt-on-accent: var(--col-txt-invert);
+
+	/* warning */
+	--col-txt-on-warning: var(--col-txt-invert);
+
+	/* special element colors */
+	--col-bg-head-foot: #0000005d;
+
+	/* background colors */
+	--col-bg-base: hsl(var(--internal-starter-h), var(--internal-starter-s), var(--internal-starter-v));
+	--col-bg-darker-1: hsl(var(--internal-starter-h), calc(var(--internal-starter-s) + 3%), calc(var(--internal-starter-v) - 3%));
+	--col-bg-darker-2: hsl(var(--internal-starter-h), calc(var(--internal-starter-s) + 6%), calc(var(--internal-starter-v) - 6%));
+	--col-bg-lighter-1: hsl(var(--internal-starter-h), calc(var(--internal-starter-s) - 3%), calc(var(--internal-starter-v) + 3%));
+	--col-bg-lighter-2: hsl(var(--internal-starter-h), calc(var(--internal-starter-s) - 6%), calc(var(--internal-starter-v) + 6%));
+	
+	/* ---------------- */
+	/* OTHER */
+    --font-body: 'Noto Sans', sans-serif;
+	--font-header: 'Comfortaa', sans-serif;
+	--font-din: 'Bahnschrift', sans-serif;
+
+	--corner-base: 0.6rem;
+	--corner-down-1: 0.4rem;
+	--corner-up-1: 0.8rem;
+}
+
+html {
+    color: var(--col-txt-main);
+    background-color: var(--col-bg-base);
+    font-family: var(--font-body)
+}
+
+a { color: var(--col-txt-link); }
+a:visited { color: var(--col-txt-link-clicked); }
 
 * {
     box-sizing: border-box;
@@ -18,4 +97,16 @@ a:visited {
 h1 {
     margin: 1rem 0;
     font-size: 2.5rem;
+}
+
+.txt-header {
+	font-family: var(--font-header);
+	font-weight: 700;
+    font-size: 3rem;
+	-webkit-text-stroke: 0.025em var(--col-txt-main);
+}
+.txt-din {
+	font-family: var(--font-din);
+	font-weight: 500;
+	font-size: 1rem;
 }

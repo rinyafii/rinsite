@@ -1,0 +1,65 @@
+---
+const { name, icon, username, link, buttonColor, buttonHover } = Astro.props;
+import ButtonBase from './ButtonStd.astro';
+---
+<style define:vars={{ buttonColor, buttonHover }}>
+
+	.textShadow {
+		text-shadow:
+			1px 0 10px var(--buttonColor),
+			0 -1px 10px var(--buttonColor),
+			-1px 0 10px var(--buttonColor),
+			0 1px 10px var(--buttonColor);
+	}
+
+	.platname {
+        font-size: 1.5rem;
+		z-index: 3;
+	}
+	.username {
+		z-index: 3;
+	}
+	.icon {
+		position: absolute;
+		left: -0.75rem;
+		top: 15%;
+
+		object-fit: contain;
+		object-position: top left;
+
+		mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.80) 0%, transparent 90%);
+
+		width: 10rem;
+		height: 70%;
+
+	}
+
+	.txt-header {
+		color: var(--col-txt-L) !important;
+		-webkit-text-stroke-color: var(--col-txt-L) !important;
+	}
+	.txt-din {
+		color: var(--col-txt-L) !important;
+	}
+
+	.socialContainer {
+		width: 100%;
+		height: 4rem;
+		display: flex;
+        justify-content: center;
+        align-items: center;
+	}
+
+	p {
+		margin: 0;
+		z-index: 2;
+	}
+</style>
+
+<div class="socialContainer">
+	<ButtonBase link={link} buttonColor={buttonColor} buttonHover={buttonHover}  borderRad="var(--corner-base)">
+		<p class="txt-header platname textShadow">{name}</p>
+		<p class="txt-din username textShadow">{username}</p>
+		<img class="icon" src={icon} />
+	</ButtonBase>
+</div>

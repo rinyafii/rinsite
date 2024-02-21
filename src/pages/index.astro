@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BannerPlain from '../components/banners/BannerPlain.astro';
+import Social from '../components/buttons/SocialButton.astro';
+import socialLinks from '../resources/socialLinks.json';
 const pageTitle = "home";
 ---
 
@@ -7,27 +10,59 @@ const pageTitle = "home";
 </script> -->
 
 <style>
-	h3 {
-		margin: 0;
-		color: #202020;
-	}
-
+	
 	.warning {
-		border-radius: 0.5rem;
-		background-color: #f1ad8a;
+		border-radius: var(--corner-base);
+		background-color: var(--col-warning);
 		padding: 0.5rem;
-		margin-top: 2rem;
 
 		display: flex;
 		justify-content: center;
 	}
+
+	.headerthingy {
+		margin: 0.2rem 1rem 0.6rem 1rem;
+		color: var(--col-accent)
+	}
+	.linkBox {
+		margin-bottom: 0.5rem;
+		background-color: var(--col-bg-darker-1);
+		border-radius: var(--corner-up-1);
+		padding: 0.5rem;
+	}
+	.discordLink {
+		margin-top: 0.5rem;
+	}
+    .mainLinks {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+		column-gap: 0.5rem;
+		row-gap: 0.5rem;
+
+        list-style-type: none; /* Remove bullets */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margins */
+    }
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
-	<div class="warning">
-		<h3>this site is still a massive WIP, so yeah. you can mess around but there isnt a lot to look at yet</h3>
-	</div>
+	<BannerPlain headTxtColor=var(--col-txt-invert) headBgColor=var(--col-warning) bodyTxt="this site is still a massive WIP, so yeah. you can mess around but there isnt a lot to look at yet" bodyTxtColor=var(--col-txt-invert) bodyBgColor=var(--col-warning) />
 
 	<h1>welcome to the rinzone</h1>
-	<p>the future home for... something</p>
+	<p>i'm still working on this site but its here! it exists!</p>
+
+	<div class="linkBox">
+		<h2 class="headerthingy">my socials and stuff</h2>
+		<ul class="mainLinks">
+			{socialLinks.platforms.map((link) => (
+				<Social name={link.platname} icon={link.icon} username={link.username} link={link.link} buttonColor={link.buttonColor} buttonHover={link.hoverColor} />
+			))}
+		</ul>
+		<div class="discordLink">
+			<Social name={socialLinks.discord.platname} icon={socialLinks.discord.icon} username={socialLinks.discord.username} link={socialLinks.discord.link} buttonColor={socialLinks.discord.buttonColor} buttonHover={socialLinks.discord.hoverColor} />
+		</div>
+	</div>
+
+	<img src='/img/home/silly.gif'>
+	
 </BaseLayout>

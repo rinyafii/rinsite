@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/cards/Standard.astro";
+const pageTitle = "fishe";
+---
+
+<style>
+	.mainColumns {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: masonry;
+		column-gap: 0.5rem;
+		row-gap: 0.5rem;
+	}
+
+	.mainColumns > * {
+		word-wrap: break-word;
+	}
+
+	img {
+		max-width: 100%;
+		object-fit: contain;
+	}
+
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+	<h1>fish(e) fan club</h1>
+	
+	<div class="mainColumns">
+		<Card title="a fish">
+			<img src="/img/fishe/lefish.png" />
+		</Card>
+		<Card title="a fishe">
+			<img src="/img/fishe/fishe.png" />
+		</Card>
+		<Card title="">
+			<p>arent they beautiful</p>
+		</Card>
+		<Card title="fish jumpscare">
+			<audio controls loop autoplay muted>
+				<source src="/img/fishe/fish.ogg" type="audio/ogg" />
+				test
+			</audio>
+		</Card>
+		<Card title="AAA WHO IS THIS GUY">
+			<img src="/img/fishe/HE HAS BEEN SUMMONED.png" />
+		</Card>
+		<Card title="i woulge">
+			<img src="/img/fishe/woulge.png" />
+		</Card>
+		<Card title="man">
+			<img src="/img/fishe/spongebob-fish.gif" />
+		</Card>
+	</div>
+</BaseLayout>
