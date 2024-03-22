@@ -1,21 +1,14 @@
 ---
-const { link, buttonColor, buttonHover, borderRad } = Astro.props;
+const { link, class: className, buttonColor, buttonHover, borderRad } = Astro.props;
 ---
 <style define:vars={{ buttonColor, buttonHover, borderRad }} >
-    a {
-        text-decoration: none;
-		color: var(--col-txt-main);
-        width: 100%;
-        height: 100%;
-		transition: margin 0.1s ease-in-out;
-    }
 	.genButtonContainer {
+		text-decoration: none;
+
 		position: relative;
-		overflow: hidden;
 
         display: flex;
-		flex-direction: column;
-        justify-content: center;
+		flex-direction: row;
         align-items: center;
 
         width: 100%;
@@ -24,33 +17,13 @@ const { link, buttonColor, buttonHover, borderRad } = Astro.props;
 		border-radius: var(--borderRad);
 		background: var(--buttonColor);
 
-		transition: all 0.1s ease-in-out;
+		transition: all 0.05s ease-in-out;
 	}
-	p {
-		margin: 0;
-        color: #f5f5f5;
-	}
-    a:hover {
-		margin: 0.075rem;
-    }
-    a:hover > .genButtonContainer {
-		width: calc(100% + 0.3rem);
-		height: calc(100% + 0.3rem);
-		margin: -0.15rem 0 0 -0.15rem;
+    .genButtonContainer:hover {
         background-color: var(--buttonHover);
-    }
-    a:active {
-		margin: -0.1rem;
-    }
-    a:active > .genButtonContainer {
-		width: calc(100% - 0.4rem);
-		height: calc(100% - 0.4rem);
-		margin: 0.2rem 0 0 0.2rem;
     }
 </style>
 
-<a href={link}>
-	<div class="genButtonContainer">
-		<slot />
-	</div>
+<a class:list={['genButtonContainer', className]} href={link}>
+	<slot />
 </a>

@@ -1,0 +1,20 @@
+---
+import ButtonBase from '../buttons/ButtonStd.astro';
+---
+
+<script>
+    const curPage = window.location.pathname
+    const selector = 'a[href="'+curPage+'"].navButton'
+    document.querySelectorAll(selector).forEach(function(ele, idx) {
+        ele.classList.add('currentPage');
+    });
+</script>
+
+<navsidebar>
+	<div class="sidebarNav w-full box box-pad-small mar-box">
+		<ButtonBase link='/' 			buttonHover="var(--col-bg-lighter-1)" borderRad="var(--corner-base)" class={"btn-padSmall navButton"}> <p class="txt txt-h4">home</p> </ButtonBase>
+		<ButtonBase link='/thoughts/' 	buttonHover="var(--col-bg-lighter-1)" borderRad="var(--corner-base)" class={"btn-padSmall navButton"}> <p class="txt txt-h4">thoughts</p> </ButtonBase>
+		<ButtonBase link='/gallery/' 	buttonHover="var(--col-bg-lighter-1)" borderRad="var(--corner-base)" class={"btn-padSmall navButton"}> <p class="txt txt-h4">gallery</p> </ButtonBase>
+		<ButtonBase link='/fishe/' 		buttonHover="var(--col-bg-lighter-1)" borderRad="var(--corner-base)" class={"btn-padSmall navButton"}> <p class="txt txt-h4">fish fan club</p> </ButtonBase>
+	</div>
+</navsidebar>

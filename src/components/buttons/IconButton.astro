@@ -1,0 +1,23 @@
+---
+const { name, icon, username, link, buttonColor, buttonHover } = Astro.props;
+import ButtonBase from './ButtonStd.astro';
+---
+<style define:vars={{ buttonColor, buttonHover }}>
+
+	.socialPlat {
+		padding-left: 0.5rem;
+		z-index: 3;
+		float: left;
+	}
+	.socialIcon {
+		width: 1.25rem;
+		height: 1.25rem;
+		float: left;
+	}
+
+</style>
+
+<ButtonBase link={link} buttonColor={buttonColor} buttonHover={buttonHover}  borderRad="var(--corner-base)" class={"socialButtonWrap mar-bottom btn-padSmall"}>
+	<img class="socialIcon" src={icon} />
+	<p class="socialPlat txt txt-shadow">{name}</p>
+</ButtonBase>

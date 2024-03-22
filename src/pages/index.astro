@@ -1,68 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BannerPlain from '../components/banners/BannerPlain.astro';
-import Social from '../components/buttons/SocialButton.astro';
-import socialLinks from '../resources/socialLinks.json';
+const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "home";
 ---
 
-<!-- <script type="module" src="https://unpkg.com/@fluentui/web-components">
-</script> -->
-
-<style>
-	
-	.warning {
-		border-radius: var(--corner-base);
-		background-color: var(--col-warning);
-		padding: 0.5rem;
-
-		display: flex;
-		justify-content: center;
-	}
-
-	.headerthingy {
-		margin: 0.2rem 1rem 0.6rem 1rem;
-		color: var(--col-accent)
-	}
-	.linkBox {
-		margin-bottom: 0.5rem;
-		background-color: var(--col-bg-darker-1);
-		border-radius: var(--corner-up-1);
-		padding: 0.5rem;
-	}
-	.discordLink {
-		margin-top: 0.5rem;
-	}
-    .mainLinks {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
-		column-gap: 0.5rem;
-		row-gap: 0.5rem;
-
-        list-style-type: none; /* Remove bullets */
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margins */
-    }
-</style>
-
 <BaseLayout pageTitle={pageTitle}>
-	<BannerPlain headTxtColor=var(--col-txt-invert) headBgColor=var(--col-warning) bodyTxt="this site is still a massive WIP, so yeah. you can mess around but there isnt a lot to look at yet" bodyTxtColor=var(--col-txt-invert) bodyBgColor=var(--col-warning) />
 
-	<h1>welcome to the rinzone</h1>
-	<p>i'm still working on this site but its here! it exists!</p>
-
-	<div class="linkBox">
-		<h2 class="headerthingy">my socials and stuff</h2>
-		<ul class="mainLinks">
-			{socialLinks.platforms.map((link) => (
-				<Social name={link.platname} icon={link.icon} username={link.username} link={link.link} buttonColor={link.buttonColor} buttonHover={link.hoverColor} />
-			))}
-		</ul>
-		<div class="discordLink">
-			<Social name={socialLinks.discord.platname} icon={socialLinks.discord.icon} username={socialLinks.discord.username} link={socialLinks.discord.link} buttonColor={socialLinks.discord.buttonColor} buttonHover={socialLinks.discord.hoverColor} />
+	<div class="box mar-box">
+		<div class="row mar-paragraph">
+			<img src='/img/home/silly.gif' style="width:4rem; border-radius: var(--corner-base);">
+			<p class="txt txt-h1 txt-col-accent mar-bottom" style="margin-left: 1rem; align-self: center;">welcome to the rinzone</p>
 		</div>
+		<p class="txt mar-paragraph">this is my little place where i host a lot of things.</p>
+		<p class="txt mar-paragraph">i'm rin, rinya, or rinyafii (they/she) (previous: rinuwaii, fite/fiteuwu, or Fite4DIMONDZ). i am a (very closeted irl) trans girl who spends most of her time online making things for fun. i come from the land of Northeast Ohio, and i'm proud of it.</p>
+		<p class="txt txt-h4 txt-col-accent mar-bottom">i have a lot of interests, way too many to count. some are:</p>
+		<ul class="mar-paragraph">
+			<li class="txt">vocaloid</li>
+			<li class="txt">vector graphic design</li>
+			<ul>
+				<li class="txt">i like working on logos, ui assets, road signs, and license plates. however like to give my shot at pretty much anything</li>
+				<li class="txt">mainly (pretty much exclusively) use Inkscape</li>
+			</ul>
+			<li class="txt">roblox development (current admin at <a href="https://cubestudios.xyz">Cube Studios</a>)</li>
+			<ul>
+				<li class="txt">i mainly develop UI and scripts, but also like to make maps when i'm in the mood</li>
+			</ul>
+			<li class="txt">computer hardware & general tech stuff</li>
+			<ul>
+				<li class="txt">ive built 1 pc and modified many more</li>
+				<li class="txt">always running windows insider & ios beta builds</li>
+			</ul>
+			<li class="txt">road & road signage design</li>
+			<li class="txt">minecraft server hosting</li>
+			<li class="txt">web development (its not my strength but i can do it)</li>
+			<li class="txt">cooking!</li>
+		</ul>
 	</div>
 
-	<img src='/img/home/silly.gif'>
+	<div class="box mar-box">
+		<p class="txt txt-h2 txt-col-accent mar-paragraph" style="display: inline;">thoughts</p>
+		<p class="txt txt-h4 txt-col-accent mar-paragraph" style="display: inline;">(blog posts)</p>
+		<ul>
+			{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+		</ul>
+	</div>
+
+	<div class="box mar-box">
+		<p class="txt txt-h2 txt-col-accent mar-paragraph">projects</p>
+		<ul>
+			<li class="txt">Project Midnight (UI, systems, some maps)</li>
+			<li class="txt">Wirespanner, a Roblox Studio plugin</li>
+		</ul>
+	</div>
 	
 </BaseLayout>

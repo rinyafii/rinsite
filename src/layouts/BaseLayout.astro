@@ -1,7 +1,12 @@
 ---
 import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+
+import NavSidebar from '../components/sidebarModules/nav.astro';
+
+import Btn from '../components/buttons/ButtonStd.astro';
+import IconBtn from '../components/buttons/IconButton.astro';
+
+import socialLinks from '../resources/socialLinks.json';
 
 const { pageTitle } = Astro.props;
 ---
@@ -14,32 +19,42 @@ const { pageTitle } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-
-	<style>
-		html {margin: 0}
-		body {
-			min-height: 100vh;
-			margin: 0;
-			display: flex;
-  			flex-direction: column;
-		}
-		.header, .footer {
-			width: 100%;
-		}
-		.main {
-			flex: 1;
-
-			height: 100%;
-			width: 100%;
-			margin: 0 auto;
-			max-width: 100ch;
-			padding: 1rem;
-		}
-	</style>
 	
 	<body>
-		<div class="header"><Header /></div>
-		<div class="main"><slot /></div>
-		<div class="footer"><Footer /></div>
+		<div class="content">
+
+			<div class="contentBody"> <slot /> </div>
+
+			<div class="contentSidebar">
+		
+				<NavSidebar />
+		
+				<div class="sidebarLinks w-full box box-pad-small mar-box">
+					<p class="txt txt-h5 mar-bottom txt-col-accent">my links</p>
+					{socialLinks.platforms.map((link) => (
+						<IconBtn name={link.platname} icon={link.icon} link={link.link} buttonColor={link.buttonColor} buttonHover={link.hoverColor} />
+					))}
+				</div>
+		
+				<div class="sidebarDiscord w-full box box-pad-small mar-box">
+					<p class="txt-h5 mar-bottom txt txt-col-accent">join our discord!!</p>
+					<IconBtn name={socialLinks.discord.platname} icon={socialLinks.discord.icon} link={socialLinks.discord.link} buttonColor={socialLinks.discord.buttonColor} buttonHover={socialLinks.discord.hoverColor} />
+				</div>
+		
+				<div class="sidebarFriends w-full box box-pad-small mar-box">
+					<p class="txt-h5 mar-bottom txt-col-accent">friends with sites</p>
+					<Btn link='https://www.aznate.tech/' 			 buttonColor=#ffbf00 buttonHover=#b28500 borderRad="var(--corner-base)" class={"btn-padSmall mar-bottom txt txt-col-invert"}> <p>Nate</p> </Btn>
+					<Btn link='https://shedingtonian.neocities.org/' buttonColor=#eb343d buttonHover=#9e2329 borderRad="var(--corner-base)" class={"btn-padSmall txt"}> <p>Crescent</p> </Btn>
+				</div>
+		
+				<div class="sidebarFooter w-full box box-pad-small">
+					<p class="txt txt-small txt-col-gray mar-bottom">developed with astro</p>
+					<p class="txt txt-small txt-col-gray mar-bottom">made with the power of :3</p>
+					<p class="txt txt-small txt-col-gray">part of the orbithub network</p>
+				</div>
+
+			</div>
+
+		</div>
 	</body>
 </html>

@@ -25,7 +25,7 @@
 		"hoverColor":"#004f99"
 	   },
 	   {
-		"platname":"main spotify playlist",
+		"platname":"spotify playlist",
 		"icon":"/img/links/spotify.svg",
 		"username":"",
 		"link":"https://open.spotify.com/playlist/2ThKG2YcUXUykX4AzAe40h",
@@ -49,7 +49,7 @@
 		"hoverColor":"#a50000"
 	   },
 	   {
-		"platname":"yt - stream archives",
+		"platname":"yt - vods",
 		"icon":"/img/links/youtube.svg",
 		"username":"@fitestreams",
 		"link":"https://youtube.com/@fitestreams",
@@ -68,15 +68,23 @@
 		"platname":"steam",
 		"icon":"/img/links/steam.svg",
 		"username":"rinuwaii",
-		"link":"https://steamcommunity.com/id/rinuwaii/",
+		"link":"https://steamcommunity.com/id/rinyafii/",
 		"buttonColor":"#72b2e4",
 		"hoverColor":"#588ab1"
+	   },
+	   {
+		"platname":"roblox",
+		"icon":"/img/links/roblox.svg",
+		"username":"fiteuwu",
+		"link":"https://www.roblox.com/users/69355977/profile",
+		"buttonColor":"#FF0000",
+		"hoverColor":"#a50000"
 	   },
 	   {
 		"platname":"github",
 		"icon":"/img/links/github.svg",
 		"username":"rinuwaii",
-		"link":"https://github.com/rinuwaii",
+		"link":"https://github.com/rinyafii",
 		"buttonColor":"#000000",
 		"hoverColor":"#202020"
 	   }
