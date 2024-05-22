@@ -35,8 +35,8 @@
 	   {
 		"platname":"youtube",
 		"icon":"/img/links/youtube.svg",
-		"username":"@rinuwaii",
-		"link":"https://youtube.com/@rinuwaii",
+		"username":"@rinyafii",
+		"link":"https://youtube.com/@rinyafii",
 		"buttonColor":"#ff0000",
 		"hoverColor":"#a50000"
 	   },
@@ -67,7 +67,7 @@
 	   {
 		"platname":"steam",
 		"icon":"/img/links/steam.svg",
-		"username":"rinuwaii",
+		"username":"rinyafii",
 		"link":"https://steamcommunity.com/id/rinyafii/",
 		"buttonColor":"#72b2e4",
 		"hoverColor":"#588ab1"
@@ -75,7 +75,7 @@
 	   {
 		"platname":"roblox",
 		"icon":"/img/links/roblox.svg",
-		"username":"fiteuwu",
+		"username":"rinyafii",
 		"link":"https://www.roblox.com/users/69355977/profile",
 		"buttonColor":"#FF0000",
 		"hoverColor":"#a50000"
