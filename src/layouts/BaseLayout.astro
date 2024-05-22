@@ -11,40 +11,57 @@ import socialLinks from '../resources/socialLinks.json';
 const { pageTitle } = Astro.props;
 ---
 
+
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" sizes="any" href="/img/melogo.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
 	
+	<style>
+
+		.mobileWidth {display: none;}
+	
+		@media screen and (max-width: 700px) {
+			.mobileWidth {display: inline;}
+			.fullWidth {display: none;}
+			.contentBody {width: 100%;}
+		}
+	
+	</style>
+
 	<body>
 		<div class="content">
 
-			<div class="contentBody"> <slot /> </div>
+			<div class="contentBody">
+				<div class="mobileWidth"><NavSidebar /></div>
+				<slot />
+			</div>
 
-			<div class="contentSidebar">
+			<div class="contentSidebar fullWidth">
 		
 				<NavSidebar />
 		
-				<div class="sidebarLinks w-full box box-pad-small mar-box">
+				<div class="sidebarLinks w-full box box-pad-small mar-box txt-bold">
 					<p class="txt txt-h5 mar-bottom txt-col-accent">my links</p>
 					{socialLinks.platforms.map((link) => (
 						<IconBtn name={link.platname} icon={link.icon} link={link.link} buttonColor={link.buttonColor} buttonHover={link.hoverColor} />
 					))}
 				</div>
 		
-				<div class="sidebarDiscord w-full box box-pad-small mar-box">
+				<div class="sidebarDiscord w-full box box-pad-small mar-box txt-bold">
 					<p class="txt-h5 mar-bottom txt txt-col-accent">join our discord!!</p>
 					<IconBtn name={socialLinks.discord.platname} icon={socialLinks.discord.icon} link={socialLinks.discord.link} buttonColor={socialLinks.discord.buttonColor} buttonHover={socialLinks.discord.hoverColor} />
 				</div>
 		
 				<div class="sidebarFriends w-full box box-pad-small mar-box">
 					<p class="txt-h5 mar-bottom txt-col-accent">friends with sites</p>
-					<Btn link='https://www.aznate.tech/' 			 buttonColor=#ffbf00 buttonHover=#b28500 borderRad="var(--corner-base)" class={"btn-padSmall mar-bottom txt txt-col-invert"}> <p>Nate</p> </Btn>
-					<Btn link='https://shedingtonian.neocities.org/' buttonColor=#eb343d buttonHover=#9e2329 borderRad="var(--corner-base)" class={"btn-padSmall txt"}> <p>Crescent</p> </Btn>
+					<Btn link='https://www.aznate.tech/' 			 buttonColor=#ffbf00 buttonHover=#b28500 borderRad="var(--corner-base)" class={"btn-padSmall mar-bottom txt txt-col-invert"}> <p class="txt-bold" >Nate</p> </Btn>
+					<Btn link='https://shedingtonian.neocities.org/' buttonColor=#eb343d buttonHover=#9e2329 borderRad="var(--corner-base)" class={"btn-padSmall txt"}> <p class="txt-bold" >Crescent</p> </Btn>
 				</div>
 		
 				<div class="sidebarFooter w-full box box-pad-small">

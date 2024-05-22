@@ -1,0 +1,24 @@
+---
+const { class: className } = Astro.props;
+---
+
+<style>
+	.cardFrame {
+		width: 100%
+	}
+
+	.cardContent{
+		border-radius: var(--corner-base);
+		background-color: var(--col-bg-darker-1);
+		padding: 1rem;
+
+		word-wrap: break-word;
+	}
+
+</style>
+
+<div class="cardFrame">
+	<div class:list={['cardContent', className]}>
+		<slot />
+	</div>
+</div>

@@ -1,14 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/cards/Base.astro";
+import BaseButton from '../components/buttons/ButtonStd.astro';
 const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "home";
 ---
+
+<style>
+	.cardFrame {
+		padding-bottom: 2em;
+	}
+</style>
 
 <BaseLayout pageTitle={pageTitle}>
 
 	<div class="box mar-box">
 		<div class="row mar-paragraph">
-			<img src='/img/home/silly.gif' style="width:4rem; border-radius: var(--corner-base);">
+			<div><img src='/img/home/silly.gif' style="width:4rem; border-radius: var(--corner-base);"></div>
 			<p class="txt txt-h1 txt-col-accent mar-bottom" style="margin-left: 1rem; align-self: center;">welcome to the rinzone</p>
 		</div>
 		<p class="txt mar-paragraph">this is my little place where i host a lot of things.</p>
@@ -38,19 +46,98 @@ const pageTitle = "home";
 	</div>
 
 	<div class="box mar-box">
-		<p class="txt txt-h2 txt-col-accent mar-paragraph" style="display: inline;">thoughts</p>
-		<p class="txt txt-h4 txt-col-accent mar-paragraph" style="display: inline;">(blog posts)</p>
+		<p class="txt txt-h1 txt-col-accent mar-paragraph" style="display: inline;">thoughts</p>
+		<p class="txt txt-h4 txt-col-accent mar-paragraph" style="display: inline;"> (blog posts)</p>
+		<p class="txt">i dont actually do a lot of thinking tbh</p>
+		<p class="txt mar-paragraph">(not actually doing these yet but its here lol)</p>
 		<ul>
 			{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
 		</ul>
 	</div>
 
 	<div class="box mar-box">
-		<p class="txt txt-h2 txt-col-accent mar-paragraph">projects</p>
-		<ul>
-			<li class="txt">Project Midnight (UI, systems, some maps)</li>
-			<li class="txt">Wirespanner, a Roblox Studio plugin</li>
-		</ul>
+		<p class="txt txt-h1 txt-col-accent">projects</p>
+		<hr>
+		<p class="txt txt-h3 mar-paragraph">the big stuff</p>
+
+		<BaseCard class="box mar-paragraph">
+			<div class="row">
+				<div style="margin-right: 1rem; width: 70%">
+					<div>
+						<img style="width:80%; height: 100%;" src="/img/pmlogo.svg">
+					</div>
+					<div class="box-pad-small mar-paragraph">
+						<p class="mar-bottom">Project Midnight is a [currently in beta] open-world driving game built by myself and a few of my close friends, built on Roblox.</p>
+						<p class="txt-small">It aims to be as open-ended as games like BeamNG, while having detailed & explorable maps like Forza Horizon, with planned racing mechanics like Midnight Club and Roblox standard roleplay mechanics that you can opt out of if wanted.</p>
+					</div>
+					</div>
+				<div style="width: 30%">
+					<p class="txt txt-h4 txt-col-accent">i do</p>
+					<div class="txt txt-small" style="margin-left: 0.8rem">
+						<li>Backend development</li>
+						<li>UI</li>
+						<li>Branding</li>
+						<li>Assets</li>
+						<li>(Some) Maps</li>
+						<li>a lot more</li>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="gap: 0.5rem">
+				<BaseButton link="https://cubestudios.xyz/pm" buttonColor="#cb3987" buttonHover="#972a65" borderRad="var(--corner-base)" class={"btn-padSmall txt txt-bold txt-center mar-bottom"}><p style="width: 100%;">Play!</p></BaseButton>
+				<BaseButton link="https://wiki.cubestudios.xyz/" buttonColor="#cb3987" buttonHover="#972a65" borderRad="var(--corner-base)" class={"btn-padSmall txt txt-bold txt-center"}><p style="width: 100%;">Cube Studios Wiki (Mostly about PM)</p></BaseButton>
+			</div>
+		</BaseCard>
+
+		<BaseCard class="box">
+			<div>
+				<img class="align-center" style="width: 70%; height: 100%;" src="/img/wslogo.svg">
+			</div>
+			<div class="box-pad">
+				<p class="mar-bottom">Wirespanner is a plugin for Roblox Studio that allows you to place down multiple sections of Rope in a single action.</p>
+				<p class="txt-small">Born out of a wish in Cube Studios development for a "Power line plugin", but made into something that anyone can adapt & use to their needs.</p>
+			</div>
+			<div class="row" style="gap: 0.5rem">
+				<BaseButton link="https://create.roblox.com/store/asset/16822401080" buttonColor="#f6b750" buttonHover="#c3913f" borderRad="var(--corner-base)" class={"btn-padSmall txt-center mar-bottom"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">Get It</p></BaseButton>
+				<BaseButton link="https://devforum.roblox.com/t/2884799" buttonColor="#f6b750" buttonHover="#c3913f" borderRad="var(--corner-base)" class={"btn-padSmall txt-center mar-bottom"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">DevForum Link</p></BaseButton>
+				<BaseButton link="https://github.com/rinyafii/wirespanner" buttonColor="#f6b750" buttonHover="#c3913f" borderRad="var(--corner-base)" class={"btn-padSmall txt-center"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">Repo</p></BaseButton>
+			</div>
+		</BaseCard>
+
+		<br>
+		<hr>
+		<p class="txt txt-h3 mar-paragraph">minor projects and other things i do</p>
+
+		<BaseCard class="box">
+			<p class="txt txt-h3 mar-bottom">theme stuff</p>
+			<div class="box-pad-small mar-paragraph">
+				<p class="mar-bottom">a single repo full of the various css tweaks i publish</p>
+				<p class="txt-small">mostly Discord css snippets and spicetify themes</p>
+			</div>
+			<div>
+				<BaseButton link="https://github.com/rinyafii/theme-stuff" buttonColor="#48cccc" buttonHover="#369999" borderRad="var(--corner-base)" class={"btn-padSmall txt-center"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">Repo</p></BaseButton>
+			</div>
+		</BaseCard>
+
+		<br>
+		<hr>
+		<p class="txt txt-h3 mar-paragraph">other things im involved in</p>
+
+		<BaseCard class="box">
+			<div class="row">
+				<div class="box-pad" style="width: 50%"><img style="width: 100%; height: 100%;" class="align-center" src="/img/vwlogo.svg"></div>
+				<div class="box-pad" style="width: 50%"><img style="width: 100%; height: 100%;" class="align-center" src="/img/vuklogo.svg"></div>
+			</div>
+			<div class="box-pad">
+				<p class="mar-bottom txt txt-center">VOCAWAVES / VOCA-UK</p>
+				<p class="txt txt-center">honestly all i did was make the logos</p>
+			</div>
+			<div class="row" style="gap: 0.5rem">
+				<BaseButton link="https://vocawaves.org" buttonColor="#52b6b0" buttonHover="#3b837e" borderRad="var(--corner-base)" class={"btn-padSmall txt-center"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">VOCAWAVES</p></BaseButton>
+				<BaseButton link="https://vocauk.com" buttonColor="#52b6b0" buttonHover="#3b837e" borderRad="var(--corner-base)" class={"btn-padSmall txt-center"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">VOCA-UK</p></BaseButton>
+			</div>
+		</BaseCard>
+
 	</div>
 	
 </BaseLayout>

@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Btn from '../components/buttons/ButtonStd.astro';
+import IconBtn from '../components/buttons/IconButton.astro';
+import socialLinks from '../resources/socialLinks.json';
+const pageTitle = "links";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	
+	<div class="box mar-box">
+		<p class="txt txt-h3 txt-col-accent">you can find me in some of these places :3</p>
+		<p class="txt mar-paragraph">(if im active there, at least)</p>
+
+		<div class=" txt-bold">
+			{socialLinks.platforms.map((link) => (
+				<IconBtn name={link.platname} icon={link.icon} link={link.link} buttonColor={link.buttonColor} buttonHover={link.hoverColor} />
+			))}
+		</div>
+	</div>
+
+	<div class="box mar-box txt-bold">
+		<p class="txt-h3 txt txt-col-accent mar-paragraph">join our discord!!</p>
+		<IconBtn name={socialLinks.discord.platname} icon={socialLinks.discord.icon} link={socialLinks.discord.link} buttonColor={socialLinks.discord.buttonColor} buttonHover={socialLinks.discord.hoverColor} />
+	</div>
+
+	<div class="box mar-box">
+		<p class="txt-h3 mar-paragraph txt-col-accent">friends with sites</p>
+		<Btn link='https://www.aznate.tech/' 			 buttonColor=#ffbf00 buttonHover=#b28500 borderRad="var(--corner-base)" class={"btn-padSmall mar-bottom txt txt-col-invert"}> <p class="txt-bold" >Nate</p> </Btn>
+		<Btn link='https://shedingtonian.neocities.org/' buttonColor=#eb343d buttonHover=#9e2329 borderRad="var(--corner-base)" class={"btn-padSmall txt"}> <p class="txt-bold" >Crescent</p> </Btn>
+	</div>
+
+</BaseLayout>

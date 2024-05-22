@@ -116,6 +116,11 @@ a:visited { color: unset }
 	display: flex;
 	margin-left: auto;
 }
+.align-center {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .row {
 	display: flex;
@@ -165,11 +170,11 @@ a:visited { color: unset }
 }
 .txt-h6 {
 	font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
 
 .txt-small {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
 
 .txt {
@@ -195,7 +200,9 @@ a:visited { color: unset }
 .txt-font-din {
 	font-family: var(--font-din);
 }
-
+.txt-left { text-align: start;}
+.txt-right { text-align: end;}
+.txt-center { text-align: center;}
 
 
 /* main element classes */
@@ -208,6 +215,9 @@ a:visited { color: unset }
 	border: 2px solid var(--col-bg-lighter-2);
 	box-shadow: 0 0 5px 1px #00000090;
 	backdrop-filter: blur(40px);
+	padding: 1rem
+}
+.box-pad {
 	padding: 1rem
 }
 .box-pad-small {
