@@ -126,6 +126,11 @@ a:visited { color: unset }
 	display: flex;
 	flex-direction: row;
 }
+@media screen and (max-width: 700px) {
+	.row-swap-on-small {
+		flex-direction: column;
+	}
+}
 
 .w-full {
 	width: 100%;

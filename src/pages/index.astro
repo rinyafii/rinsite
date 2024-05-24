@@ -61,19 +61,20 @@ const pageTitle = "home";
 		<p class="txt txt-h3 mar-paragraph">the big stuff</p>
 
 		<BaseCard class="box mar-paragraph">
-			<div class="row">
-				<div style="margin-right: 1rem; width: 70%">
+			<div class="row row-swap-on-small">
+				<div style="margin-right: 1rem; column-width: 70%">
 					<div>
 						<img style="width:80%; height: 100%;" src="/img/pmlogo.svg">
 					</div>
 					<div class="box-pad-small mar-paragraph">
 						<p class="mar-bottom">Project Midnight is a [currently in beta] open-world driving game built by myself and a few of my close friends, built on Roblox.</p>
-						<p class="txt-small">It aims to be as open-ended as games like BeamNG, while having detailed & explorable maps like Forza Horizon, with planned racing mechanics like Midnight Club and Roblox standard roleplay mechanics that you can opt out of if wanted.</p>
+						<p class="txt-small mar-bottom">It aims to be as open-ended as games like BeamNG, while having detailed & explorable maps like Forza Horizon, with planned racing mechanics like Midnight Club and Roblox standard roleplay mechanics that you can opt out of if wanted.</p>
+						<p class="txt-col-accent">NOTE: Currently, the game is only playable on PC.</p>
 					</div>
 					</div>
-				<div style="width: 30%">
+				<div style="width: auto">
 					<p class="txt txt-h4 txt-col-accent">i do</p>
-					<div class="txt txt-small" style="margin-left: 0.8rem">
+					<div class="txt txt-small" style="margin-left: 0.8rem; min-width: 150px;">
 						<li>Backend development</li>
 						<li>UI</li>
 						<li>Branding</li>
@@ -83,13 +84,13 @@ const pageTitle = "home";
 					</div>
 				</div>
 			</div>
-			<div class="row" style="gap: 0.5rem">
+			<div class="row row-swap-on-small" style="gap: 0.5rem">
 				<BaseButton link="https://cubestudios.xyz/pm" buttonColor="#cb3987" buttonHover="#972a65" borderRad="var(--corner-base)" class={"btn-padSmall txt txt-bold txt-center mar-bottom"}><p style="width: 100%;">Play!</p></BaseButton>
 				<BaseButton link="https://wiki.cubestudios.xyz/" buttonColor="#cb3987" buttonHover="#972a65" borderRad="var(--corner-base)" class={"btn-padSmall txt txt-bold txt-center"}><p style="width: 100%;">Cube Studios Wiki (Mostly about PM)</p></BaseButton>
 			</div>
 		</BaseCard>
 
-		<BaseCard class="box">
+		<BaseCard class="box mar-paragraph">
 			<div>
 				<img class="align-center" style="width: 70%; height: 100%;" src="/img/wslogo.svg">
 			</div>
@@ -97,10 +98,22 @@ const pageTitle = "home";
 				<p class="mar-bottom">Wirespanner is a plugin for Roblox Studio that allows you to place down multiple sections of Rope in a single action.</p>
 				<p class="txt-small">Born out of a wish in Cube Studios development for a "Power line plugin", but made into something that anyone can adapt & use to their needs.</p>
 			</div>
-			<div class="row" style="gap: 0.5rem">
+			<div class="row row-swap-on-small" style="gap: 0.5rem">
 				<BaseButton link="https://create.roblox.com/store/asset/16822401080" buttonColor="#f6b750" buttonHover="#c3913f" borderRad="var(--corner-base)" class={"btn-padSmall txt-center mar-bottom"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">Get It</p></BaseButton>
 				<BaseButton link="https://devforum.roblox.com/t/2884799" buttonColor="#f6b750" buttonHover="#c3913f" borderRad="var(--corner-base)" class={"btn-padSmall txt-center mar-bottom"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">DevForum Link</p></BaseButton>
 				<BaseButton link="https://github.com/rinyafii/wirespanner" buttonColor="#f6b750" buttonHover="#c3913f" borderRad="var(--corner-base)" class={"btn-padSmall txt-center"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">Repo</p></BaseButton>
+			</div>
+		</BaseCard>
+
+		<BaseCard class="box">
+			<div>
+				<img class="align-center" style="width: 40%; height: 100%;" src="/img/inpplogo.svg">
+			</div>
+			<div class="box-pad">
+				<p class="mar-bottom">This is a mod for BeamNG.Drive that adds some of my license plate recreations into the game, specifically various plates of Indiana</p>
+			</div>
+			<div class="row row-swap-on-small" style="gap: 0.5rem">
+				<BaseButton link="https://www.beamng.com/resources/indiana-plate-pack.26028/" buttonColor="#191b45" buttonHover="#060711" borderRad="var(--corner-base)" class={"btn-padSmall txt-center mar-bottom"}><p class="txt txt-bold" style="width: 100%;">Get It</p></BaseButton>
 			</div>
 		</BaseCard>
 
@@ -124,15 +137,15 @@ const pageTitle = "home";
 		<p class="txt txt-h3 mar-paragraph">other things im involved in</p>
 
 		<BaseCard class="box">
-			<div class="row">
-				<div class="box-pad" style="width: 50%"><img style="width: 100%; height: 100%;" class="align-center" src="/img/vwlogo.svg"></div>
-				<div class="box-pad" style="width: 50%"><img style="width: 100%; height: 100%;" class="align-center" src="/img/vuklogo.svg"></div>
+			<div class="row row-swap-on-small">
+				<div class="box-pad align-center" style="width: auto"><img style="width: 80%; height: 100%;" class="align-center" src="/img/vwlogo.svg"></div>
+				<div class="box-pad align-center" style="width: auto"><img style="width: 80%; height: 100%;" class="align-center" src="/img/vuklogo.svg"></div>
 			</div>
 			<div class="box-pad">
 				<p class="mar-bottom txt txt-center">VOCAWAVES / VOCA-UK</p>
 				<p class="txt txt-center">honestly all i did was make the logos</p>
 			</div>
-			<div class="row" style="gap: 0.5rem">
+			<div class="row row-swap-on-small" style="gap: 0.5rem">
 				<BaseButton link="https://vocawaves.org" buttonColor="#52b6b0" buttonHover="#3b837e" borderRad="var(--corner-base)" class={"btn-padSmall txt-center"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">VOCAWAVES</p></BaseButton>
 				<BaseButton link="https://vocauk.com" buttonColor="#52b6b0" buttonHover="#3b837e" borderRad="var(--corner-base)" class={"btn-padSmall txt-center"}><p class="txt txt-bold txt-col-invert" style="width: 100%;">VOCA-UK</p></BaseButton>
 			</div>

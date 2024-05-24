@@ -83,10 +83,18 @@
 	   {
 		"platname":"github",
 		"icon":"/img/links/github.svg",
-		"username":"rinuwaii",
+		"username":"rinyafii",
 		"link":"https://github.com/rinyafii",
 		"buttonColor":"#000000",
 		"hoverColor":"#202020"
+	   },
+	   {
+		"platname":"AniList",
+		"icon":"/img/links/anilist.svg",
+		"username":"rinyafii",
+		"link":"https://anilist.co/user/rinyafii/",
+		"buttonColor":"#02a9ff",
+		"hoverColor":"#0176b2"
 	   }
 	]
  }
